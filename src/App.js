@@ -1,23 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import useCommentsFetcher from './useCommentsFetcher';
 
 function App() {
+
+  const fetcher = useCommentsFetcher(4);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {fetcher.map(comment => <div>id is {comment.id} <br/>{comment.name}</div>)}
     </div>
   );
 }
