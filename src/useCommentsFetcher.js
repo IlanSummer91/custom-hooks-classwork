@@ -10,7 +10,7 @@ const useCommentsFetcher = (postId = 1) => {
       setComments(result);
     }
     get();
-  }, [])
+  }, [postId])
 
   async function fetchComments() {
     const result = await fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`);
